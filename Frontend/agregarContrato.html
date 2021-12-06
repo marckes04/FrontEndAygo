@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+
+
+    h1{
+        text-align: center;
+    }
+
+    .Container{
+    background-color: blue;
+			border-radius: 3px;
+			color: #999;
+			font-size: 0.8em;
+			padding: 20px;
+			margin: 0 auto;
+			width: 300px;
+			align-items: center;
+    }
+
+    input, textarea{
+			border: 0;
+			outline: none;
+
+			width: 280px;
+            height: 30px;
+		}
+    
+</style>
+</head>
+<body>
+
+    <h1>CREACION DE UN NUEVO CONTRATO</h1>
+    
+    <div class="Container">
+    <div class="fila">
+        <label> Nombre: </label>
+        <input type="text" id = "TxtName">
+    </div>
+
+    <br>
+    <div class="fila">
+        <label> Nit: </label>
+        <input type="text" id = "TxtNit">
+    </div>
+    <br>
+    <div class="fila">
+        <label>Reportado:</label>
+        <select name="reported" id="Valreported">
+            <option value=" ">     </option>
+            <option value="true">Si</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+    <br>
+    <div class="fila">
+        <label>Lista Negra:</label>
+        <select name="reported" id="ValList">
+            <option value=" ">     </option>
+            <option value="true">Si</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <br>
+
+<input type="button" value="Agregar" id="eButAgregar">
+
+</div>
+
+
+    <script>
+  /*      window.addEventListener('DOMContentLoaded', _=>{
+            document.querySelector('#eButAgregar')
+            .addEventListener('click', agregarContrato);
+        })
+
+        async function agregarContrato(_)
+        {
+            const dataRaw = {
+            name: TxtName.value,
+            nit: TxtNit.value,
+            reported: Valreported.value,
+            black_list: ValList.value
+
+            }
+
+            console.log(dataRaw)
+
+            const respuesta = await fetch(
+                'http://aygo-lb-184146795.us-east-1.elb.amazonaws.com/api/ms/introduction/enterprises',
+                {
+                    
+                    method: 'post',
+                    //hearders:{
+                         //   'Content-Type': 'application/json'
+                   // },
+                    body: JSON.stringify(dataRaw)
+                }
+            );
+
+            const datos = await respuesta.json();
+                if(datos.ok)
+                window.location = './mostrarContrato.htm';
+        } 
+*/
+
+const getBtn = document.getElementById('eButAgregar');
+
+const sendHttpRequest = {method,url,data} => {
+    return fetch(url,{
+        method: method,
+        body: JSON.stringify(data),
+        headers: data ? {'Content-Type':'application/json'}
+    })
+
+}
+
+    </script>
+
+</body>
+</html>
